@@ -1,1 +1,0 @@
-# techhmr-userservice
