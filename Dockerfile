@@ -1,4 +1,4 @@
-FROM openjdk:8
+FROM openjdk:8-jdk-alpine
 EXPOSE 9092
-ADD target/techhmr-userservice.jar techhmr-userservice.jar
-ENTRYPOINT ["java","-jar","/techhmr-userservice.jar"]
+COPY target/*.jar user-service.jar
+ENTRYPOINT ["java","-jar","/user-service.jar"]
