@@ -24,9 +24,9 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: user-service-service
+  name: user-srv-k8service
   labels:
-    app: user-service-service
+    app: user-srv-k8service
 spec:
   type: NodePort
   ports:
@@ -34,4 +34,4 @@ spec:
     port: 9093
     targetPort: 9093
   selector:
-    app: user-service-service
+    app: user-service
