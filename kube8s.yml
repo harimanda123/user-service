@@ -1,37 +1,36 @@
----
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: user-service
+   name: user-service
 spec:
-  replicas: 2
-  selector:
-    matchLabels:
-      app: user-service
-  template:
-    metadata:
-      name: user-service
-      labels:
-        app: user-service
-    spec:
-      containers:
-      - name: user-service
-        image: qualitto007/user-service:latest
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 9093
+   replicas: 2
+   selector:
+      matchLabels:
+         app: user-service
+   template:
+      metadata:
+         name: user-service
+         labels:
+            app: user-service
+      spec:
+         containers:
+         -  name: user-service
+            image: qualitto007/user-service:latest
+            imagePullPolicy: Always
+            ports:
+            -  containerPort: 9092
 ---
 kind: Service
 apiVersion: v1
 metadata:
-  name: user-srv-k8service
-  labels:
-    app: user-srv-k8service
+   name: user-service-k8srv
+   labels:
+      app: user-service-k8srv
 spec:
-  type: NodePort
-  ports:
-  - nodePort: 30002
-    port: 9092
-    targetPort: 9092
-  selector:
-    app: user-service
+   type: NodePort
+   ports:
+   -  nodePort: 30001
+      port: 9092
+      targetPort: 9092
+   selector:
+      app: user-service

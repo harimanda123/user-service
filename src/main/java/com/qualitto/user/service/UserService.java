@@ -1,20 +1,20 @@
-package com.techhmr.userservice.service;
+package com.qualitto.user.service;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.techhmr.userservice.VO.Department;
-import com.techhmr.userservice.VO.ResponseTemplate;
-import com.techhmr.userservice.entities.User;
-import com.techhmr.userservice.repo.UserRepository;
+import com.qualitto.user.VO.Department;
+import com.qualitto.user.VO.ResponseTemplate;
+import com.qualitto.user.entities.User;
+import com.qualitto.user.repo.UserRepository;
+
+import lombok.extern.slf4j.Slf4j;
 
 @Service
+@Slf4j
 public class UserService {
-	private final Logger log = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
 	private UserRepository userRepository;
@@ -22,7 +22,7 @@ public class UserService {
 	@Autowired
 	private RestTemplate restTemplate;
 	
-	@Value("${department.service.endpoint}")
+	@Value("${services.department.endpoint}")
 	private String departServiceEndpoint;
 	
 	

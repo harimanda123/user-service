@@ -1,0 +1,37 @@
+server:
+   port: 9092
+spring:
+   application:
+      name: user-service
+   profiles:
+      active: local
+---
+spring:
+   profiles: local
+   cloud:
+      config:
+         uri: http://localhost:7777
+---
+spring:
+   profiles: dev
+   cloud:
+      config:
+         uri: http://localhost:7777
+---
+spring:
+   profiles: test
+   cloud:
+      config:
+         uri: http://localhost:7777
+---
+spring:
+   profiles: stage
+   cloud:
+      config:
+         uri: http://localhost:7777
+---
+spring:
+   profiles: prod
+   cloud:
+      config:
+         uri: http://localhost:7777
