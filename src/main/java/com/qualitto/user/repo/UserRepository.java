@@ -8,5 +8,4 @@ import com.qualitto.user.entities.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>{
 
-	User findByUserId(Long userId);
 }

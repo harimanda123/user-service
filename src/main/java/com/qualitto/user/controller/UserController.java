@@ -18,19 +18,19 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/users")
 @Slf4j
 public class UserController {
-	
+
 	@Autowired
 	private UserService userService;
-	
+
 	@PostMapping("/")
-	public User saveUser(@RequestBody User user){
+	public User saveUser(@RequestBody User user) {
 		log.info("Inside saveDepartment of UserController");
 		return userService.saveUser(user);
 	}
-	
+
 	@GetMapping("/{id}")
-	public ResponseTemplate getUserWithDepartment(@PathVariable(value="id") Long userId){
-		log.info("Inside getUserWithDepartment of UserController");
-		return userService.getUserWithDepartment(userId);
+	public ResponseTemplate findById(@PathVariable(value = "id") Long userId) {
+		log.info("Inside findById of UserController");
+		return userService.findById(userId);
 	}
 }
