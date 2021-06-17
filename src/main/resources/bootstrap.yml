@@ -4,7 +4,7 @@ spring:
    application:
       name: user-service
    profiles:
-      active: local
+      active: dev
 ---
 spring:
    profiles: local
@@ -16,22 +16,22 @@ spring:
    profiles: dev
    cloud:
       config:
-         uri: http://localhost:7777
+         uri: http://dev.qualitto.com/config
 ---
 spring:
    profiles: test
    cloud:
       config:
-         uri: http://localhost:7777
+         uri: http://test.qualitto.com/config
 ---
 spring:
    profiles: stage
    cloud:
       config:
-         uri: http://localhost:7777
+         uri: http://stage.qualitto.com/config
 ---
 spring:
    profiles: prod
    cloud:
       config:
-         uri: http://localhost:7777
+         uri: http://qualitto.com/config

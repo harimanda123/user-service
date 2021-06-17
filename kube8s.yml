@@ -3,7 +3,7 @@ apiVersion: apps/v1
 metadata:
    name: user-service
 spec:
-   replicas: 2
+   replicas: 1
    selector:
       matchLabels:
          app: user-service
@@ -27,10 +27,7 @@ metadata:
    labels:
       app: user-service-k8srv
 spec:
-   type: NodePort
    ports:
-   -  nodePort: 30004
-      port: 9092
-      targetPort: 9092
+    - port: 9092
    selector:
       app: user-service
