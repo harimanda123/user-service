@@ -18,7 +18,7 @@ spring:
    profiles: dev
    cloud:
       config:
-         uri: http://dev.qualitto.com/config
+         uri: http://192.168.64.2/config
 ---
 spring:
    profiles: test
